@@ -26,4 +26,6 @@ async function signUpUser() {
     }).then(response => response.json())
 
     alert(response.message)
+
+    window.location.href = "..index.html"
 }

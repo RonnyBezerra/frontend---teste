@@ -27,5 +27,5 @@ async function signUpUser() {
 
     alert(response.message)
 
-    window.location.href = "..index.html"
+    window.location.href = "../../index.html"
 }

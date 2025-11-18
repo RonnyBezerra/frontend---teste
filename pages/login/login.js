@@ -21,11 +21,17 @@ async function login() {
         body: JSON.stringify({ user })
     }).then(response => response.json())
 
-    const { message, token } = response
+    if(response.message) {
+        alert(response.message)
+        window.location.reload()
+        return
+    }
 
-    sessionStorage.setItem("token", token)
+    const { id, name } = response
 
-    alert(message)
+    sessionStorage.setItem("user", JSON.strigify({ id, name }))
+
+    alert("Login efetuado com sucesso!")
 
     window.location.href = "../../index.html"
 }
